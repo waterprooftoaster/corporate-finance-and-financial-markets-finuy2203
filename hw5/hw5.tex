@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\textbf{Question 8.5}
+\bigskip
+
+A stock has a required return of 9\%, the risk-free rate is 4.5\%, and the market risk premium is 3\%.
+
+\begin{enumerate}
+  \item[a.] What is the stock's beta?
+  \item[b.] If the market risk premium increased to 5\%, what would happen to the stock's required rate of return? Assume that the risk-free rate and the beta remain unchanged.
+\end{enumerate}
+
+\bigskip
+\textbf{Answer}
+
+\begin{enumerate}
+  \item[a.] From the CAPM, $r_s = r_{RF} + \beta(\text{RP}_M)$:
+    \[
+      9\% = 4.5\% + \beta(3\%)
+    \]
+    \[
+      \beta = \frac{9\%-4.5\%}{3\%} = \boxed{1.5}
+    \]
+
+  \item[b.] With the same risk-free rate and beta, but $\text{RP}_M = 5\%$:
+    \[
+      r_s = 4.5\% + 1.5(5\%) = 4.5\% + 7.5\% = \boxed{12\%}
+    \]
+    The required return rises by 3 percentage points (from 9\% to 12\%) because the higher market risk premium amplifies the stock's above-average systematic risk ($\beta>1$).
+\end{enumerate}
+
+\bigskip
+\bigskip
+
+\textbf{Question 8.6}
+\bigskip
+
+Stocks A and B have the following probability distributions of expected future returns:
+
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+Probability & A & B \\
+\hline
+0.1 & $(10\%)$ & $(35\%)$ \\
+0.2 & 2\%      & 0\%      \\
+0.4 & 12\%     & 20\%     \\
+0.2 & 20\%     & 25\%     \\
+0.1 & 38\%     & 45\%     \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+  \item[a.] Calculate the expected rate of return $\hat{r}_B$ for Stock B ($\hat{r}_A=12\%$).
+  \item[b.] Calculate the standard deviation of expected returns $\sigma_A$ for Stock A ($\sigma_B=20.35\%$). Calculate the coefficient of variation for Stock B. Is it possible that most investors might regard Stock B as being less risky than Stock A? Explain.
+  \item[c.] Assume the risk-free rate is 2.5\%. What are the Sharpe ratios for Stocks A and B? Are these calculations consistent with the information obtained from the coefficient of variation calculations in part b? Explain.
+\end{enumerate}
+
+\bigskip
+\textbf{Answer}
+
+\begin{enumerate}
+  \item[a.] $\hat{r}_B = \sum_i p_i r_{B,i}$:
+    \[
+      \hat{r}_B = 0.1(-35) + 0.2(0) + 0.4(20) + 0.2(25) + 0.1(45)
+    \]
+    \[
+      = -3.5 + 0 + 8 + 5 + 4.5 = \boxed{14\%}
+    \]
+
+  \item[b.] $\sigma_A = \sqrt{\sum_i p_i(r_{A,i}-\hat{r}_A)^2}$ with $\hat{r}_A=12\%$:
+    \begin{align*}
+      \sigma_A^2 &= 0.1(-10-12)^2 + 0.2(2-12)^2 + 0.4(12-12)^2\\
+                 &\quad + 0.2(20-12)^2 + 0.1(38-12)^2\\
+                 &= 0.1(484) + 0.2(100) + 0 + 0.2(64) + 0.1(676)\\
+                 &= 48.4 + 20 + 0 + 12.8 + 67.6 = 148.8
+    \end{align*}
+    \[
+      \sigma_A = \sqrt{148.8} \approx \boxed{12.20\%}
+    \]
+
+    Coefficients of variation:
+    \[
+      \text{CV}_A = \frac{12.20}{12} \approx 1.017, \qquad
+      \text{CV}_B = \frac{20.35}{14} \approx 1.454
+    \]
+
+    On a stand-alone basis Stock B is riskier (higher CV and higher $\sigma$). Even so, it is possible most investors would regard Stock B as the less risky holding: investors who hold diversified portfolios price only the systematic (market) component of risk, not total stand-alone risk. If Stock B has a lower beta than Stock A---for example because its returns have a low or negative correlation with the overall market---then Stock B contributes less risk to a diversified portfolio than Stock A despite having higher $\sigma$ and CV.
+
+  \item[c.] Sharpe ratio $S = (\hat{r}-r_{RF})/\sigma$ with $r_{RF}=2.5\%$:
+    \[
+      S_A = \frac{12-2.5}{12.20} \approx \boxed{0.779}, \qquad
+      S_B = \frac{14-2.5}{20.35} \approx \boxed{0.565}
+    \]
+    These results are consistent with the CV calculation. CV ranks Stock A as the better choice (lower stand-alone risk per unit of expected return), and the Sharpe ratio likewise ranks Stock A higher (more excess return per unit of total risk). Both measures use total risk in the denominator, so they agree: Stock A delivers superior reward-to-risk on a stand-alone basis.
+\end{enumerate}
+
+\end{document}
